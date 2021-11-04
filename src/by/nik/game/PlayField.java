@@ -16,6 +16,7 @@ public class PlayField {
         if (row >= 1 && row <= 3){
             return false;
         } else {
+            show();
             System.out.println("Invalid value ROW. Try again.");
             return true;
         }
@@ -26,6 +27,7 @@ public class PlayField {
         if (col >= 1 && col <= 3){
             return false;
         } else {
+            show();
             System.out.println("Invalid value COL. Try again.");
             return true;
         }
@@ -42,6 +44,7 @@ public class PlayField {
             playField[row-1][col-1] = isSymbolX ? SYMBOL_X : SYMBOL_O;
             return false;
         } else {
+            show();
             System.out.println("This cell is already marked. Try again.");
             return true;
         }
