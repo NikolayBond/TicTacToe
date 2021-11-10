@@ -81,13 +81,18 @@ public class PlayField {
 
     boolean isWin(boolean isSymbolX) {
         char SYMBOL =  isSymbolX ? SYMBOL_X : SYMBOL_O;
+        if (
+            (playField[0][0] == SYMBOL && playField[1][1] == SYMBOL && playField[2][2] == SYMBOL) ||
+            (playField[2][0] == SYMBOL && playField[1][1] == SYMBOL && playField[0][2] == SYMBOL)
+        ){
+            System.out.println("Player '" + SYMBOL +"'  WIN !");
+            return true;
+        }
         for (int i = 0; i < 3; i++)
             if (
-                (playField[i][0] == SYMBOL && playField[i][1] == SYMBOL && playField[i][2] == SYMBOL) ||
-                (playField[0][i] == SYMBOL && playField[1][i] == SYMBOL && playField[2][i] == SYMBOL) ||
-                (playField[0][0] == SYMBOL && playField[1][1] == SYMBOL && playField[2][2] == SYMBOL) ||
-                (playField[2][0] == SYMBOL && playField[1][1] == SYMBOL && playField[0][2] == SYMBOL)
-               ){
+                    (playField[i][0] == SYMBOL && playField[i][1] == SYMBOL && playField[i][2] == SYMBOL) ||
+                            (playField[0][i] == SYMBOL && playField[1][i] == SYMBOL && playField[2][i] == SYMBOL)
+            ){
                 System.out.println("Player '" + SYMBOL +"'  WIN !");
                 return true;
             }
